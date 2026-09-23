@@ -59,6 +59,7 @@ node scripts/validate-data.mjs  # 校验契约，必须输出 data check: OK
 ## 用 Codex 继续做
 
 - 八关练习说明见 `docs/codex-ladder.md`。
+- 第一次用 GitHub：`docs/github-guide.md` 从建仓库写到手机上装好。
 - 录入流程可以装成技能：把 `skills/life-dashboard` 复制到 `%USERPROFILE%\.codex\skills\` 下，然后对 Codex 说「按 life-dashboard 技能记录今天的跑步」。
 - 仓库约定写在 `AGENTS.md`，Codex 在这个目录里会自动遵守。
 

@@ -72,6 +72,7 @@ sw.js                      离线缓存
 icons/                     图标，SVG 为源文件，PNG 为生成物
 docs/deploy.md             部署到 GitHub Pages 或 Vercel
 docs/codex-ladder.md       八关练习说明
+docs/github-guide.md       给第一次用 GitHub 的人看的完整步骤
 skills/life-dashboard/     可安装到 Codex 的录入技能
 ```
 
