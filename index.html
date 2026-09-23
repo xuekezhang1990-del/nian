@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="人生仪表盘：把阅读、运动、花费、咖啡和每日复盘放在同一块屏幕上。" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#eceff1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c1013" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="仪表盘" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>人生仪表盘</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="icon" href="icons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="icons/icon-192.png" sizes="192x192" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="rail">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 17.5 8.5 12l3.5 3.5L21 6.5" />
+              <path d="M15 6.5h6v6" />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>人生仪表盘</strong>
+            <small>Life Dashboard</small>
+          </span>
+        </div>
+        <nav class="nav" id="nav" aria-label="主导航"></nav>
+        <div class="rail-foot">
+          <p class="rail-note" id="railNote"></p>
+          <div class="rail-buttons" id="railButtons"></div>
+          <button class="ghost-btn" id="exportBtn" type="button">导出 CSV</button>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <div class="topbar-title">
+            <h1 id="viewTitle">今日</h1>
+            <p class="topbar-sub" id="viewSubtitle"></p>
+          </div>
+          <div class="topbar-actions">
+            <span class="sync" id="syncState">
+              <i aria-hidden="true"></i>
+              <span>数据已就绪</span>
+            </span>
+            <button class="btn btn-primary" id="addBtn" type="button">
+              <span class="icon-slot" data-icon="plus" aria-hidden="true"></span>
+              记一笔
+            </button>
+            <button class="icon-btn" id="themeBtn" type="button" title="切换深浅主题" aria-label="切换深浅主题"></button>
+          </div>
+        </header>
+        <main class="content" id="view" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div id="modalRoot"></div>
+    <div id="installRoot"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <input type="file" id="backupInput" accept="application/json,.json" hidden />
+
+    <script src="data/dashboard.data.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

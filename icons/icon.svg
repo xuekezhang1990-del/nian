@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="人生仪表盘">
+  <rect width="512" height="512" rx="112" fill="#0d6e66" />
+  <path
+    d="M112 346 L200 252 L272 302 L400 158"
+    fill="none"
+    stroke="#f6f3ea"
+    stroke-width="36"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="400" cy="158" r="32" fill="#f2c14e" />
+</svg>
