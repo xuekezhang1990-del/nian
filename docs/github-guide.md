@@ -53,16 +53,27 @@ https://github.com/你的用户名/life-dashboard.git
 
 ## 第三步：打开 Pages 托管
 
-1. 进入仓库页面，点 `Settings`。
-2. 左侧栏找到 `Pages`。
-3. `Source` 有两种选法，按你上一步的方式选：
-   - 用方式 A 或 B 推送的：选 `GitHub Actions`。项目里已经带了部署工作流，会自动跑。
-   - 用方式 C 网页上传的：选 `Deploy from a branch`，分支选 `main`，目录选 `/ (root)`，然后保存。
-4. 等一到两分钟，Pages 页面顶部会显示网址：
+1. 打开这个地址（把用户名换成你自己的）：
+
+```
+https://github.com/你的用户名/nian/settings/pages
+```
+
+2. 找到 `Build and deployment`，把 `Source` 下拉从 `None` 改成 `Deploy from a branch`。
+3. `Branch` 选 `main`，右边的目录选 `/ (root)`，点 `Save`。
+4. 等一到两分钟，刷新页面，顶部会显示网址：
 
 ```
 https://你的用户名.github.io/life-dashboard/
 ```
+
+这里的网址由仓库名决定。仓库叫 `nian`，网址就是 `https://你的用户名.github.io/nian/`。
+
+这种方式是 GitHub 自己把仓库里的文件当静态网站发布，不需要额外的构建流程，最省事。
+
+## 可选：改用 GitHub Actions 部署（进阶）
+
+分支部署已经够用。等你想学 Actions 的时候，再加一个工作流文件，并且把上面第 2 步的 `Source` 改成 `GitHub Actions`。注意顺序：**先启用 Pages、再跑工作流**。反过来会失败，因为仓库里还不存在 Pages 站点，工作流没有权限创建它。
 
 ## 第四步：装到 iPhone
 

@@ -17,12 +17,18 @@ python -m http.server 8000
 
 适合想用 Git 管版本、以后继续改的人。
 
-1. 在 GitHub 新建一个仓库，例如 `life-dashboard`，设为 public 或 private 都可以（private 仓库的 Pages 需要付费账号）。
-2. 把 `life-dashboard` 这个目录作为仓库根目录推上去，注意 `.github/workflows/pages.yml` 和 `.nojekyll` 要一起提交。
-3. 打开仓库的 Settings，左侧选 Pages，Source 选 GitHub Actions。
-4. 推送到 `main` 分支，Actions 会自动部署，完成后 Pages 页面会显示网址，形如 `https://用户名.github.io/life-dashboard/`。
+1. 在 GitHub 新建一个仓库，例如 `life-dashboard`，设为 public（private 仓库的 Pages 需要付费账号）。
+2. 把 `life-dashboard` 这个目录作为仓库根目录推上去，注意 `.nojekyll` 要一起提交。
+3. 打开仓库的 `Settings` → `Pages`。
+4. 在 `Build and deployment` 里，把 `Source` 选成 `Deploy from a branch`。
+5. `Branch` 选 `main`，目录选 `/ (root)`，保存。
+6. 等一到两分钟，Pages 页面会显示网址，形如 `https://用户名.github.io/life-dashboard/`。
 
-工作流里 `path: .` 假设 `life-dashboard` 就是仓库根目录。如果你的目录结构不同，改这一行。
+这种方式由 GitHub 直接发布仓库里的静态文件，没有构建步骤，最省事，也不会出现工作流报错。
+
+### 进阶：改用 GitHub Actions 部署
+
+想要更细的部署控制（比如发布前跑校验）时，可以加一个 GitHub Actions 工作流，并把 Pages 的 `Source` 改成 `GitHub Actions`。顺序必须是：**先启用 Pages，再让工作流运行**。如果仓库里还没有 Pages 站点，工作流里的 `actions/configure-pages` 会因为权限不足而失败，这是新仓库最常见的一个坑。
 
 ## 路线二：Vercel
 
